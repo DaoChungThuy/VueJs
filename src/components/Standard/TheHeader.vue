@@ -1,6 +1,6 @@
 <template>
-    <div class="w-full pt-3">
-        <div class="mx-4 sm:mx-20">
+    <div class="w-full pt-3 shadow-sm py-2">
+        <div class="mx-4 sm:mx-10 lg:mx-20">
             <div class="w-full px-2 flex justify-between">
                 <div class="flex justify-start">
                     <div class="rounded-lg h-8 w-8 max-w-11">

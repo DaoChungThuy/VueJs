@@ -1,9 +1,9 @@
 <template>
     <div class="w-full">
-        <div class="mx-6 sm:mx-20 flex justify-start overflow-x-auto gap-x-2">
+        <div class="mx-6 sm:mx-10 lg:mx-20 flex justify-start overflow-x-scroll gap-x-2">
             <div v-for="item in category" :key="item.id">
                 <button
-                    class="sm:border-2 rounded-none sm:rounded-xl focus:text-[#3DCBB1] px-3 whitespace-nowrap  py-1 font-light">
+                    class="sm:border-2 sm:focus:border-base-primary sm:border-gray-400 rounded-none sm:rounded-xl focus:border-b-2 border-base-primary px-5 whitespace-nowrap  py-1 font-light">
                     {{ item.name }}
                 </button>
             </div>
@@ -12,47 +12,7 @@
     </div>
 </template>
 <script setup lang='ts'>
-const category = [
-    {
-        id: '1',
-        name: 'All'
-    },
-    {
-        id: '2',
-        name: 'VueJS'
-    },
-    {
-        id: '3',
-        name: 'Laravel'
-    },
-    {
-        id: '4',
-        name: 'Web Progaming'
-    },
-    {
-        id: '5',
-        name: 'Mobile Progaming'
-    },
-    {
-        id: '6',
-        name: 'Backend Develop'
-    },
-    {
-        id: '7',
-        name: 'Adobe Photoshop'
-    },
-    {
-        id: '8',
-        name: 'Tailwind'
-    },
-    {
-        id: '8',
-        name: 'UI Design'
-    },
-    {
-        id: '9',
-        name: 'Adobe'
-    },
-]
+import { category } from '@/sample_data/list_category';
+
 </script>
 <style></style>

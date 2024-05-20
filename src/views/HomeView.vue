@@ -8,35 +8,35 @@
         <TheCategory />
       </div>
     </div>
-    <div class="mx-6 sm:mx-20 sm:mt-8">
+    <div class="mx-6 sm:mx-10 lg:mx-20 sm:mt-8">
       <div class="block font-medium">
         <h1>More from Kitani Studio</h1>
         <span class="font-light">We know the best things for You. Top picks for You.</span>
       </div>
       <div class="flex overflow-x-auto lg:grid lg:grid-cols-4 gap-4 gap-y-10 pt-6">
-        <ListCourse :data="data1" />
+        <ListCourse :data="suggest_course" />
       </div>
     </div>
-    <div class="mx-6 sm:mx-20 mt-8">
+    <div class="mx-6 sm:mx-10 lg:mx-20 mt-8">
       <div class="block font-medium">
         <h2>Trending Course</h2>
         <span class="font-light">We know the best things for You. Top picks for You.</span>
       </div>
       <div class=" flex overflow-x-auto sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-10 pt-6">
-        <ListCourse :data="data2" />
+        <ListCourse :data="trending_course" />
       </div>
     </div>
-    <div class="mx-6 sm:mx-20 mt-8 mb-16">
+    <div class="mx-6 sm:mx-10 lg:mx-20 mt-8 mb-16">
       <div class="block font-medium">
         <h2>Popular Instructor</h2>
         <span class="font-light">We know the best things for You. Top picks for You.</span>
       </div>
       <div class="w-full pt-6">
-        <ListTeacher :data="data3" />
+        <ListTeacher :data="list_teacher" />
       </div>
     </div>
     <div
-      class="mx-6 sm:mx-20 bg-sky-500 rounded-lg text-white font-light mb-16 hidden sm:flex justify-between items-center">
+      class="mx-6 sm:mx-10 lg:mx-20 bg-sky-500 rounded-lg text-white font-light mb-16 hidden sm:flex justify-between items-center">
       <div class="text-nowrap p-10 none hidden lg:block">
         <h2 class="font-bold text-lg">Join and get amazing discount</h2>
         <span>With our responsive themes and mobile and desktop appss</span>
@@ -77,120 +77,8 @@ import TheCarousel from '@/components/Home/TheCarousel.vue'
 import TheCategory from '@/components/Home/TheCategory.vue';
 import ListCourse from '@/components/Home/ListCourse.vue';
 import ListTeacher from '@/components/Home/ListTeacher.vue';
-
-const data1 = [
-  {
-    id: '1',
-    img: 'https://s3-alpha-sig.figma.com/img/e460/223f/6f1215c27fbf0f3b9a8bb3d6957782dd?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DccfvOxEtBeZze39C8uoR-fcPFki2LHholzD-KvKrMuN~2wKIMk1L9H-aYGcmeEnZdtqHMP6D9fOzocBTFuVULdD3~UZ1OZm4dI89fBykt8nSPnkxmdDoYrweUK8uTcdZcTKfzP5wWA-l2o3EDPEMz0ckH-zQHn8Dc15BhNwko2dso1Qaosxbsy3shoLjmYaIgOLjb--mYYd-gexuZr29Ds5L4BA6soyYd1Q7nfwn5UP-sapN2svDSAcEjnmCuQ0~xx-6IH8f4BgQo9bvWQA9DdwMLoIXU6L2t~cpXVYPALwGVMf8D-TPr8bBoZbhCWbHhxb5nN9MwaG1lplehVRtw__',
-    name: 'thuy',
-    price: '30$'
-  },
-  {
-    id: '2',
-    img: 'https://s3-alpha-sig.figma.com/img/e460/223f/6f1215c27fbf0f3b9a8bb3d6957782dd?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DccfvOxEtBeZze39C8uoR-fcPFki2LHholzD-KvKrMuN~2wKIMk1L9H-aYGcmeEnZdtqHMP6D9fOzocBTFuVULdD3~UZ1OZm4dI89fBykt8nSPnkxmdDoYrweUK8uTcdZcTKfzP5wWA-l2o3EDPEMz0ckH-zQHn8Dc15BhNwko2dso1Qaosxbsy3shoLjmYaIgOLjb--mYYd-gexuZr29Ds5L4BA6soyYd1Q7nfwn5UP-sapN2svDSAcEjnmCuQ0~xx-6IH8f4BgQo9bvWQA9DdwMLoIXU6L2t~cpXVYPALwGVMf8D-TPr8bBoZbhCWbHhxb5nN9MwaG1lplehVRtw__',
-    name: 'thuy',
-    price: '30$'
-  },
-  {
-    id: '3',
-    img: 'https://s3-alpha-sig.figma.com/img/e460/223f/6f1215c27fbf0f3b9a8bb3d6957782dd?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DccfvOxEtBeZze39C8uoR-fcPFki2LHholzD-KvKrMuN~2wKIMk1L9H-aYGcmeEnZdtqHMP6D9fOzocBTFuVULdD3~UZ1OZm4dI89fBykt8nSPnkxmdDoYrweUK8uTcdZcTKfzP5wWA-l2o3EDPEMz0ckH-zQHn8Dc15BhNwko2dso1Qaosxbsy3shoLjmYaIgOLjb--mYYd-gexuZr29Ds5L4BA6soyYd1Q7nfwn5UP-sapN2svDSAcEjnmCuQ0~xx-6IH8f4BgQo9bvWQA9DdwMLoIXU6L2t~cpXVYPALwGVMf8D-TPr8bBoZbhCWbHhxb5nN9MwaG1lplehVRtw__',
-    name: 'thuy',
-    price: '30$'
-  },
-  {
-    id: '4',
-    img: 'https://s3-alpha-sig.figma.com/img/e460/223f/6f1215c27fbf0f3b9a8bb3d6957782dd?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DccfvOxEtBeZze39C8uoR-fcPFki2LHholzD-KvKrMuN~2wKIMk1L9H-aYGcmeEnZdtqHMP6D9fOzocBTFuVULdD3~UZ1OZm4dI89fBykt8nSPnkxmdDoYrweUK8uTcdZcTKfzP5wWA-l2o3EDPEMz0ckH-zQHn8Dc15BhNwko2dso1Qaosxbsy3shoLjmYaIgOLjb--mYYd-gexuZr29Ds5L4BA6soyYd1Q7nfwn5UP-sapN2svDSAcEjnmCuQ0~xx-6IH8f4BgQo9bvWQA9DdwMLoIXU6L2t~cpXVYPALwGVMf8D-TPr8bBoZbhCWbHhxb5nN9MwaG1lplehVRtw__',
-    name: 'thuy',
-    price: '30$'
-  },
-]
-
-const data2 = [
-  {
-    id: '1',
-    img: 'https://s3-alpha-sig.figma.com/img/e460/223f/6f1215c27fbf0f3b9a8bb3d6957782dd?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DccfvOxEtBeZze39C8uoR-fcPFki2LHholzD-KvKrMuN~2wKIMk1L9H-aYGcmeEnZdtqHMP6D9fOzocBTFuVULdD3~UZ1OZm4dI89fBykt8nSPnkxmdDoYrweUK8uTcdZcTKfzP5wWA-l2o3EDPEMz0ckH-zQHn8Dc15BhNwko2dso1Qaosxbsy3shoLjmYaIgOLjb--mYYd-gexuZr29Ds5L4BA6soyYd1Q7nfwn5UP-sapN2svDSAcEjnmCuQ0~xx-6IH8f4BgQo9bvWQA9DdwMLoIXU6L2t~cpXVYPALwGVMf8D-TPr8bBoZbhCWbHhxb5nN9MwaG1lplehVRtw__',
-    name: 'thuy',
-    price: '30$'
-  },
-  {
-    id: '2',
-    img: 'https://s3-alpha-sig.figma.com/img/e460/223f/6f1215c27fbf0f3b9a8bb3d6957782dd?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DccfvOxEtBeZze39C8uoR-fcPFki2LHholzD-KvKrMuN~2wKIMk1L9H-aYGcmeEnZdtqHMP6D9fOzocBTFuVULdD3~UZ1OZm4dI89fBykt8nSPnkxmdDoYrweUK8uTcdZcTKfzP5wWA-l2o3EDPEMz0ckH-zQHn8Dc15BhNwko2dso1Qaosxbsy3shoLjmYaIgOLjb--mYYd-gexuZr29Ds5L4BA6soyYd1Q7nfwn5UP-sapN2svDSAcEjnmCuQ0~xx-6IH8f4BgQo9bvWQA9DdwMLoIXU6L2t~cpXVYPALwGVMf8D-TPr8bBoZbhCWbHhxb5nN9MwaG1lplehVRtw__',
-    name: 'thuy',
-    price: '30$'
-  },
-  {
-    id: '3',
-    img: 'https://s3-alpha-sig.figma.com/img/e460/223f/6f1215c27fbf0f3b9a8bb3d6957782dd?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DccfvOxEtBeZze39C8uoR-fcPFki2LHholzD-KvKrMuN~2wKIMk1L9H-aYGcmeEnZdtqHMP6D9fOzocBTFuVULdD3~UZ1OZm4dI89fBykt8nSPnkxmdDoYrweUK8uTcdZcTKfzP5wWA-l2o3EDPEMz0ckH-zQHn8Dc15BhNwko2dso1Qaosxbsy3shoLjmYaIgOLjb--mYYd-gexuZr29Ds5L4BA6soyYd1Q7nfwn5UP-sapN2svDSAcEjnmCuQ0~xx-6IH8f4BgQo9bvWQA9DdwMLoIXU6L2t~cpXVYPALwGVMf8D-TPr8bBoZbhCWbHhxb5nN9MwaG1lplehVRtw__',
-    name: 'thuy',
-    price: '30$'
-  },
-  {
-    id: '4',
-    img: 'https://s3-alpha-sig.figma.com/img/e460/223f/6f1215c27fbf0f3b9a8bb3d6957782dd?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DccfvOxEtBeZze39C8uoR-fcPFki2LHholzD-KvKrMuN~2wKIMk1L9H-aYGcmeEnZdtqHMP6D9fOzocBTFuVULdD3~UZ1OZm4dI89fBykt8nSPnkxmdDoYrweUK8uTcdZcTKfzP5wWA-l2o3EDPEMz0ckH-zQHn8Dc15BhNwko2dso1Qaosxbsy3shoLjmYaIgOLjb--mYYd-gexuZr29Ds5L4BA6soyYd1Q7nfwn5UP-sapN2svDSAcEjnmCuQ0~xx-6IH8f4BgQo9bvWQA9DdwMLoIXU6L2t~cpXVYPALwGVMf8D-TPr8bBoZbhCWbHhxb5nN9MwaG1lplehVRtw__',
-    name: 'thuy',
-    price: '30$'
-  },
-  {
-    id: '5',
-    img: 'https://s3-alpha-sig.figma.com/img/e460/223f/6f1215c27fbf0f3b9a8bb3d6957782dd?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DccfvOxEtBeZze39C8uoR-fcPFki2LHholzD-KvKrMuN~2wKIMk1L9H-aYGcmeEnZdtqHMP6D9fOzocBTFuVULdD3~UZ1OZm4dI89fBykt8nSPnkxmdDoYrweUK8uTcdZcTKfzP5wWA-l2o3EDPEMz0ckH-zQHn8Dc15BhNwko2dso1Qaosxbsy3shoLjmYaIgOLjb--mYYd-gexuZr29Ds5L4BA6soyYd1Q7nfwn5UP-sapN2svDSAcEjnmCuQ0~xx-6IH8f4BgQo9bvWQA9DdwMLoIXU6L2t~cpXVYPALwGVMf8D-TPr8bBoZbhCWbHhxb5nN9MwaG1lplehVRtw__',
-    name: 'thuy',
-    price: '30$'
-  },
-  {
-    id: '6',
-    img: 'https://s3-alpha-sig.figma.com/img/e460/223f/6f1215c27fbf0f3b9a8bb3d6957782dd?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DccfvOxEtBeZze39C8uoR-fcPFki2LHholzD-KvKrMuN~2wKIMk1L9H-aYGcmeEnZdtqHMP6D9fOzocBTFuVULdD3~UZ1OZm4dI89fBykt8nSPnkxmdDoYrweUK8uTcdZcTKfzP5wWA-l2o3EDPEMz0ckH-zQHn8Dc15BhNwko2dso1Qaosxbsy3shoLjmYaIgOLjb--mYYd-gexuZr29Ds5L4BA6soyYd1Q7nfwn5UP-sapN2svDSAcEjnmCuQ0~xx-6IH8f4BgQo9bvWQA9DdwMLoIXU6L2t~cpXVYPALwGVMf8D-TPr8bBoZbhCWbHhxb5nN9MwaG1lplehVRtw__',
-    name: 'thuy',
-    price: '30$'
-  },
-  {
-    id: '7',
-    img: 'https://s3-alpha-sig.figma.com/img/e460/223f/6f1215c27fbf0f3b9a8bb3d6957782dd?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DccfvOxEtBeZze39C8uoR-fcPFki2LHholzD-KvKrMuN~2wKIMk1L9H-aYGcmeEnZdtqHMP6D9fOzocBTFuVULdD3~UZ1OZm4dI89fBykt8nSPnkxmdDoYrweUK8uTcdZcTKfzP5wWA-l2o3EDPEMz0ckH-zQHn8Dc15BhNwko2dso1Qaosxbsy3shoLjmYaIgOLjb--mYYd-gexuZr29Ds5L4BA6soyYd1Q7nfwn5UP-sapN2svDSAcEjnmCuQ0~xx-6IH8f4BgQo9bvWQA9DdwMLoIXU6L2t~cpXVYPALwGVMf8D-TPr8bBoZbhCWbHhxb5nN9MwaG1lplehVRtw__',
-    name: 'thuy',
-    price: '30$'
-  },
-  {
-    id: '8',
-    img: 'https://s3-alpha-sig.figma.com/img/e460/223f/6f1215c27fbf0f3b9a8bb3d6957782dd?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DccfvOxEtBeZze39C8uoR-fcPFki2LHholzD-KvKrMuN~2wKIMk1L9H-aYGcmeEnZdtqHMP6D9fOzocBTFuVULdD3~UZ1OZm4dI89fBykt8nSPnkxmdDoYrweUK8uTcdZcTKfzP5wWA-l2o3EDPEMz0ckH-zQHn8Dc15BhNwko2dso1Qaosxbsy3shoLjmYaIgOLjb--mYYd-gexuZr29Ds5L4BA6soyYd1Q7nfwn5UP-sapN2svDSAcEjnmCuQ0~xx-6IH8f4BgQo9bvWQA9DdwMLoIXU6L2t~cpXVYPALwGVMf8D-TPr8bBoZbhCWbHhxb5nN9MwaG1lplehVRtw__',
-    name: 'thuy',
-    price: '30$'
-  },
-]
-
-const data3 = [
-  {
-    id: '1',
-    img: 'https://s3-alpha-sig.figma.com/img/e460/223f/6f1215c27fbf0f3b9a8bb3d6957782dd?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DccfvOxEtBeZze39C8uoR-fcPFki2LHholzD-KvKrMuN~2wKIMk1L9H-aYGcmeEnZdtqHMP6D9fOzocBTFuVULdD3~UZ1OZm4dI89fBykt8nSPnkxmdDoYrweUK8uTcdZcTKfzP5wWA-l2o3EDPEMz0ckH-zQHn8Dc15BhNwko2dso1Qaosxbsy3shoLjmYaIgOLjb--mYYd-gexuZr29Ds5L4BA6soyYd1Q7nfwn5UP-sapN2svDSAcEjnmCuQ0~xx-6IH8f4BgQo9bvWQA9DdwMLoIXU6L2t~cpXVYPALwGVMf8D-TPr8bBoZbhCWbHhxb5nN9MwaG1lplehVRtw__',
-    name: 'Alexander Bastian',
-    description: 'Expert Mobile Engineer'
-  },
-  {
-    id: '2',
-    img: 'https://s3-alpha-sig.figma.com/img/e460/223f/6f1215c27fbf0f3b9a8bb3d6957782dd?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DccfvOxEtBeZze39C8uoR-fcPFki2LHholzD-KvKrMuN~2wKIMk1L9H-aYGcmeEnZdtqHMP6D9fOzocBTFuVULdD3~UZ1OZm4dI89fBykt8nSPnkxmdDoYrweUK8uTcdZcTKfzP5wWA-l2o3EDPEMz0ckH-zQHn8Dc15BhNwko2dso1Qaosxbsy3shoLjmYaIgOLjb--mYYd-gexuZr29Ds5L4BA6soyYd1Q7nfwn5UP-sapN2svDSAcEjnmCuQ0~xx-6IH8f4BgQo9bvWQA9DdwMLoIXU6L2t~cpXVYPALwGVMf8D-TPr8bBoZbhCWbHhxb5nN9MwaG1lplehVRtw__',
-    name: 'Alexander Bastian',
-    description: 'Expert Mobile Enginee'
-  },
-  {
-    id: '3',
-    img: 'https://s3-alpha-sig.figma.com/img/e460/223f/6f1215c27fbf0f3b9a8bb3d6957782dd?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DccfvOxEtBeZze39C8uoR-fcPFki2LHholzD-KvKrMuN~2wKIMk1L9H-aYGcmeEnZdtqHMP6D9fOzocBTFuVULdD3~UZ1OZm4dI89fBykt8nSPnkxmdDoYrweUK8uTcdZcTKfzP5wWA-l2o3EDPEMz0ckH-zQHn8Dc15BhNwko2dso1Qaosxbsy3shoLjmYaIgOLjb--mYYd-gexuZr29Ds5L4BA6soyYd1Q7nfwn5UP-sapN2svDSAcEjnmCuQ0~xx-6IH8f4BgQo9bvWQA9DdwMLoIXU6L2t~cpXVYPALwGVMf8D-TPr8bBoZbhCWbHhxb5nN9MwaG1lplehVRtw__',
-    name: 'Alexander Bastian',
-    description: 'Expert Mobile Engineer'
-  },
-  {
-    id: '4',
-    img: 'https://s3-alpha-sig.figma.com/img/e460/223f/6f1215c27fbf0f3b9a8bb3d6957782dd?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=DccfvOxEtBeZze39C8uoR-fcPFki2LHholzD-KvKrMuN~2wKIMk1L9H-aYGcmeEnZdtqHMP6D9fOzocBTFuVULdD3~UZ1OZm4dI89fBykt8nSPnkxmdDoYrweUK8uTcdZcTKfzP5wWA-l2o3EDPEMz0ckH-zQHn8Dc15BhNwko2dso1Qaosxbsy3shoLjmYaIgOLjb--mYYd-gexuZr29Ds5L4BA6soyYd1Q7nfwn5UP-sapN2svDSAcEjnmCuQ0~xx-6IH8f4BgQo9bvWQA9DdwMLoIXU6L2t~cpXVYPALwGVMf8D-TPr8bBoZbhCWbHhxb5nN9MwaG1lplehVRtw__',
-    name: 'Alexander Bastian',
-    description: 'Expert Mobile Engineer'
-  },
-]
+import { suggest_course, trending_course } from '@/sample_data/list_course';
+import { list_teacher } from '@/sample_data/list_teacher';
 
 </script>
-<style scoped>
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-</style>
+<style scoped></style>

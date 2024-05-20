@@ -9,8 +9,8 @@
         <div>
             <TheFooter/>
         </div>
-        <UserSignUp v-if ="signUp" @hidden="showSignUp"></UserSignUp>
-        <UserLogin :status="isShowlogin" @login="showLogin"></UserLogin>
+        <UserSignUp v-if ="signUp" @login="showLogin" @signup="showSignUp"></UserSignUp>
+        <UserLogin v-if="login" @signup="showSignUp" @login="showLogin"></UserLogin>
         <!-- <UserLogin v-if ="login" @login="showLogin" ></UserLogin> -->
     </div>
 </template>
@@ -23,14 +23,14 @@ import { ref } from 'vue';
 
 const signUp = ref(false);
 const login = ref(false);
-const isShowlogin = ref(false);
 
 const showSignUp = (show: boolean) => {
     signUp.value = show
+    login.value = false
 };
 
 const showLogin = (show: boolean) => {
     login.value = show
-    isShowlogin.value = !isShowlogin.value
+    signUp.value = false
 }
 </script>
