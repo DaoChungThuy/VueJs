@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full bg-black px-20 text-white font-light">
+    <div class="w-full hidden sm:block float-end bg-black px-20 text-white font-light">
         <div class="w-full flex py-11">
             <div class="flex w-1/4">
                 <div class="rounded-lg w-1/5 max-w-8">

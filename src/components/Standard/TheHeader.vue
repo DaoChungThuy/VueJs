@@ -1,45 +1,51 @@
 <template>
-    <div class="w-full p-3">
-        <div class="mx-20">
-            <div class="w-full flex justify-between">
+    <div class="w-full pt-3 shadow-sm py-2">
+        <div class="mx-4 sm:mx-10 lg:mx-20">
+            <div class="w-full px-2 flex justify-between">
                 <div class="flex justify-start">
-                    <div class="rounded-lg w-1/5 max-w-11">
+                    <div class="rounded-lg h-8 w-8 max-w-11">
                         <img src="@/assets/img/logo.png" alt="">
                     </div>
-                    <div class="pl-0 font-bold flex justify-center ps-1">
+                    <div class="pl-0 font-bold flex justify-center ps-1 py-1">
                         <p class="text-center">MyCourse.io</p>
                     </div>
+                    <div class="hidden sm:flex lg:hidden ms-2 pt-1">
+                        <p>Browse</p>
+                        <select name="Browse" id="">
+
+                        </select>
+                    </div>
                 </div>
-                <div class="flex justify-end">
-                    <div class="flex justify-end items-center pe-3 bg-white rounded w-`">
-                        <div class="border-solid items-center">
-                            <input type="text" placeholder="Search for Course" class="pl-2">
+                <div class="flex justify-end ">
+                    <div
+                        class="hidden sm:flex justify-between items-center pe-3 bg-[#F5F5F5] rounded-lg lg:me-auto lg:w-96">
+                        <div class=" border-solid items-center ">
+                            <input type="text" placeholder="Search for Course" class="pl-2 outline-none bg-transparent">
                         </div>
-                        <div class="rounded-sm max-w-6 items-center">
+                        <div class="rounded-sm w-6 items-center">
                             <button>
                                 <img src="@/assets/img/search.png" alt="">
                             </button>
                         </div>
                     </div>
-
-                    <div class="flex me-8">
-                        <div class="ms-3 flex items-center me-8 font-light">
-                            <p>Become intructor</p>
+                    <div class="flex me-4">
+                        <div class="ms-3 hidden lg:flex items-center me-8 font-light">
+                            <p class="text-nowrap">Become intructor</p>
                         </div>
                         <div class="flex items-center ">
                             <button>
-                                <img src="@/assets/img/shopping_cart_24px.png" alt="">
+                                <img src="@/assets/img/shopping_cart_24px.png" alt="" class="w-6 h-6">
                             </button>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+                    <div class="justify-end hidden lg:flex">
                         <div class="rounded-xl me-1 px-2 border-2 py-1">
-                            <button>
+                            <button @click="showLogin()">
                                 <p>Login</p>
                             </button>
                         </div>
                         <div class="rounded-xl bg-[#3DCBB1] px-2 items-center py-1">
-                            <button class="flex items-center">
+                            <button class="flex items-center" @click=" showSingUp()">
                                 <svg class="items-center" width="16" height="16" viewBox="0 0 16 16" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -51,12 +57,26 @@
                             </button>
                         </div>
                     </div>
+                    <div class=" flex lg:hidden items-center justify-end">
+                        <div class=" flex items-center justify-end">
+                            <font-awesome-icon :icon="['far', 'bell']" class="h-6 w-6" />
+                        </div>
+                        <div class="hidden sm:block rounded-lg h-8 w-8">
+                            <img src="@/assets/img/pr.png" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </template>
 <script setup lang="ts">
-
+const emit = defineEmits(['hidden', 'login'])
+const showSingUp = () => {
+    emit('hidden', true)
+}
+const showLogin = () => {
+    emit('login', true)
+}
 </script>
 <style></style>
