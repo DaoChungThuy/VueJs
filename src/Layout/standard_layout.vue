@@ -15,11 +15,10 @@
     </div>
 </template>
 <script setup lang="ts">
-import TheHeader from '@/components/Standard/TheHeader.vue'
-import TheFooter from '@/components/Standard/TheFooter.vue'
-import UserSignUp from '@/components/UserSignUp.vue';
-import UserLogin from '@/components/UserLogin.vue';
-import { ref } from 'vue';
+import TheHeader from '@/components/organisms/Standard/TheHeader.vue'
+import TheFooter from '@/components/organisms/Standard/TheFooter.vue'
+import UserSignUp from '@/components/organisms/UserSignUp.vue';
+import UserLogin from '@/components/organisms/UserLogin.vue';
 
 const signUp = ref(false);
 const login = ref(false);

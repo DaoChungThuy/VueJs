@@ -73,10 +73,6 @@
   </div>
 </template>
 <script setup lang="ts">
-import TheCarousel from '@/components/Home/TheCarousel.vue'
-import TheCategory from '@/components/Home/TheCategory.vue';
-import ListCourse from '@/components/Home/ListCourse.vue';
-import ListTeacher from '@/components/Home/ListTeacher.vue';
 import { suggest_course, trending_course } from '@/sample_data/list_course';
 import { list_teacher } from '@/sample_data/list_teacher';
 

@@ -93,9 +93,6 @@
     </div>
 </template>
 <script setup lang='ts'>
-import TheCarousel from '@/components/Home/TheCarousel.vue'
-import ListMyCourse from '@/components/Home/ListMyCourse.vue'
-import TheCategory from '@/components/Home/TheCategory.vue'
 import { my_courses } from '@/sample_data/list_my_course'
 import type { MyCourse } from '@/types/common';
 

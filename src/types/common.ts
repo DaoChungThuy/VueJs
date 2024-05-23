@@ -37,3 +37,7 @@ export interface Carousel {
   avatar: string
   description: string
 }
+
+export interface Svg {
+  [key: string]: string
+}

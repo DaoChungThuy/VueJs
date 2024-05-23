@@ -54,9 +54,6 @@
     </div>
 </template>
 <script setup lang='ts'>
-import ListCourse from '@/components/Home/ListCourse.vue';
-import ListTeacher from '@/components/Home/ListTeacher.vue';
-import { reactive } from 'vue';
 import { trending_course } from '@/sample_data/list_course';
 import { list_teacher } from '@/sample_data/list_teacher';
 import type { Course } from '@/types/common';

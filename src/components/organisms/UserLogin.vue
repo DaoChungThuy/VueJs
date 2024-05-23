@@ -1,5 +1,5 @@
 <template>
-    <div class="fixed flex bg-gray-500 bg-opacity-30 inset-0" @click="showLogin">
+    <div class="fixed flex bg-gray-500 bg-opacity-30 inset-0" @click="showLogin(false)">
         <div @click.stop="" class="m-auto flex w-full h-full sm:w-[800px] sm:h-[550px] container mx-auto ">
             <div class="hidden sm:block sm:w-1/2 bg-[url('@/assets/img/bg-lo.png')] bg-cover relative">
                 <div class="absolute bottom-6 left-6 flex items-center">
@@ -45,7 +45,8 @@
                 <p class="mt-4 text-slate-800">Join us and get more benefits. We promise to keep your data safely.</p>
                 <div class="flex justify-between items-center bg-[#F5F5F5] rounded-lg lg:me-auto w-full px-2 mt-4">
                     <div class=" border-solid items-center ">
-                        <input type="text" placeholder="Email Address" class="outline-none bg-transparent py-2 ">
+                        <input v-model="user.email" type="text" placeholder="Email Address"
+                            class="outline-none bg-transparent py-2 ">
                     </div>
                     <div class="rounded-sm w-6 items-center">
                         <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -57,7 +58,8 @@
                 </div>
                 <div class="flex justify-between items-center bg-[#F5F5F5] rounded-lg lg:me-auto w-full px-2 mt-4">
                     <div class=" border-solid items-center ">
-                        <input type="text" placeholder="Password" class="outline-none bg-transparent py-2 ">
+                        <input type="text" v-model="user.password" placeholder="Password"
+                            class="outline-none bg-transparent py-2 ">
                     </div>
                     <div class="rounded-sm w-6 items-center">
                         <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,7 +69,7 @@
                         </svg>
                     </div>
                 </div>
-                <button
+                <button @click="handleLogin"
                     class="bg-red-800 sm:bg-base-primary flex items-center justify-center gap-2 text-white py-1 rounded-2xl mt-8 font-medium">
                     <p>Login</p>
                 </button>
@@ -147,10 +149,24 @@
     </div>
 </template>
 <script setup lang='ts'>
+const user = reactive<{
+    email: string;
+    password: string;
+}>({
+    email: '',
+    password: ''
+});
+
+const store = useStore();
 
 const emit = defineEmits(['login', 'signup']);
 
-const showLogin = () => {
-    emit('login');
+const showLogin = (show: boolean) => {
+    emit('login', show);
+};
+
+const handleLogin = () => {
+    store.dispatch('auth/login', user);
+    showLogin(false)
 };
 </script>
